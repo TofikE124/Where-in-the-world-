@@ -61,6 +61,8 @@ ul{
   line-height: 1.5;
   font-family: 'Nunito Sans', sans-serif;
   font-size: var(--fs-500);
+  color: var(--clr-dark);
+  background: var(--clr-light);
 }
 
 /* make images and pictures easier to work with */
@@ -148,4 +150,31 @@ select{
 .fw-300{font-weight: 300;} 
 
  
+/* Colors */
+.txt-dark{color: var(--clr-dark);}
+.txt-grey{color: var(--clr-grey);} 
  
+.bg-light{background-color: var(--clr-light);}
+.bg-white{background-color: var(--clr-pure-white);}
+
+
+/*====================
+   Page Specifics
+====================== */
+
+/* Header */
+
+.primary-header{
+  padding: 2rem 1rem;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06);
+}
+
+.primary-header-container{
+  justify-content: space-between;
+}
+
+.change-mode-container{
+  align-items: center;
+  --gap:0.5rem;
+  cursor: pointer;
+}
