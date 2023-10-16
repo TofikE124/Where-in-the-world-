@@ -1,9 +1,9 @@
 import { useContext } from "react"
-import { ThemeContext } from "../App"
+import { AppContext } from "../App"
 
 export default function Header(){
 
-    const {darkMode,setDarkMode} = useContext(ThemeContext)
+    const {darkMode,setDarkMode} = useContext(AppContext)
 
     function toggleDarkMode(){
         setDarkMode(prevDarkMode=>!prevDarkMode)
@@ -12,7 +12,7 @@ export default function Header(){
     const moonImg = `/public/images/moon-${darkMode?'dark':'light'}.png`
 
     return(
-        <header className="primary-header bg-white">
+        <header className="primary-header bg-white bx-s">
             <div className="primary-header-container container flex">
                 <h1 className="fs-800 fw-800 ">Where in the world?</h1>
                 <div className="change-mode-container flex" onClick={toggleDarkMode}>

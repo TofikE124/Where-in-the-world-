@@ -7,7 +7,9 @@ export default function PageLayout(){
     return(
         <>
             <Header />
-            <Outlet />
+            <main>
+                <Outlet />
+            </main>
         </>
     )
 }
