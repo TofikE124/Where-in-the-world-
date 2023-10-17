@@ -3,13 +3,21 @@ import {AppContext} from '../../App'
 export const FilterContext = createContext()
 
 export default function Filter({children}){
+
+    
+    const filterRef = useRef(null)
+    const titleRef = useRef(null)
+    const {selectedOption,setSelectedOption} = useContext(AppContext)
+    
+
+
     useEffect(()=>{
         function handleClick(e){
             if(e.target ===titleRef.current || e.target.parentElement === titleRef.current){
                 toggleFilterOpen()
             }
-            else if(e.target!==optionsRef.current){
-                optionsRef.current.classList.remove('options-open')
+            else if(e.target!==filterRef.current){
+                filterRef.current.classList.remove('options-open')
             }
         }
     
@@ -17,16 +25,10 @@ export default function Filter({children}){
         return ()=> document.body.removeEventListener('click',handleClick)
     },[])
 
-
-    const optionsRef = useRef(null)
-    const titleRef = useRef(null)
-    const {selectedOption,setSelectedOption} = useContext(AppContext)
-
-    
     function toggleFilterOpen(){
-        optionsRef.current.classList.toggle('options-open')
+        filterRef.current.classList.toggle('options-open')
     }
-    
+
     function selectOption(value){
         if(value==='None'){
             setSelectedOption('')
@@ -36,9 +38,11 @@ export default function Filter({children}){
     }
 
 
+
+
     return(
-        <FilterContext.Provider value={{optionsRef,titleRef,selectedOption,setSelectedOption,toggleFilterOpen,selectOption}}>
-            <div className="filter-container">
+        <FilterContext.Provider value={{titleRef,selectedOption,setSelectedOption,toggleFilterOpen,selectOption}}>
+            <div ref={filterRef} className="filter-container">
                 {children}
             </div>
         </FilterContext.Provider>

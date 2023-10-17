@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { AppContext } from "../App"
+import { Link } from "react-router-dom"
 
 export default function Header(){
 
@@ -14,7 +15,7 @@ export default function Header(){
     return(
         <header className="primary-header bg-white bx-s">
             <div className="primary-header-container container flex">
-                <h1 className="fs-800 fw-800 ">Where in the world?</h1>
+                <Link className="primary-header__title-container" to='/'><h1 className="primary-header__title fs-800 fw-800 txt-dark">Where in the world?</h1></Link>
                 <div className="change-mode-container flex" onClick={toggleDarkMode}>
                     <img className="moon-icon" 
                     src={moonImg}/>
