@@ -10,7 +10,7 @@ export default function Header(){
         setDarkMode(prevDarkMode=>!prevDarkMode)
     }
 
-    const moonImg = `/public/images/moon-${darkMode?'dark':'light'}.png`
+    const moonImg = `/images/moon-${darkMode?'dark':'light'}.png`
 
     return(
         <header className="primary-header bg-white bx-s">

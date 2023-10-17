@@ -10,7 +10,7 @@ export default function Title({children}){
             <p className="filter-title fs-500 fw-400">
                 {selectedOption||children}
             </p>
-            <img src="public/images/arrow.svg" />
+            <img src="/images/arrow.svg" />
         </div>
     )
    

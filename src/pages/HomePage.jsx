@@ -15,7 +15,7 @@ export default function HomePage(){
     const [searchParams,setSearchParams] = useSearchParams()
 
     const {darkMode,selectedOption,countries,loading,sucess,error} = useContext(AppContext)
-    const searchIcon = `/public/images/search-${darkMode?'dark':'light'}.svg`  
+    const searchIcon = `/images/search-${darkMode?'dark':'light'}.svg`  
     const [countriesElements,setCountriesElements]= useState([])
     const [search,setSearch] = useState(searchParams.get('search')||'')
 
